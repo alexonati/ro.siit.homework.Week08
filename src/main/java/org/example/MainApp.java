@@ -1,5 +1,8 @@
 package org.example;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.SortedSet;
@@ -8,7 +11,9 @@ import java.util.TreeSet;
 public class MainApp
 {
     public static void main( String[] args )
+
     {
+         Logger logger = LogManager.getLogger(LogManager.ROOT_LOGGER_NAME);
         TreeSet<Student> studentSortedSetByAge = new TreeSet<Student>(Collections.reverseOrder(new StudentComparator()));
 
         studentSortedSetByAge.add(new Student("Ana","Red",1994,"female","2955213039174"));
